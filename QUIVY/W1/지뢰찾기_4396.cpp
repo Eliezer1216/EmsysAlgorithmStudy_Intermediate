@@ -1,3 +1,5 @@
+//무언가 결과 출력은 다 정상적으로 되는거 같은데 백준에서는 오류라고 뜸: HELP
+
 #include <iostream>
 using namespace std;
 
