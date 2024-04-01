@@ -92,3 +92,41 @@ class Kit // kit 클래스
     }
 
 }
+
+/* 다른 풀이 분석 - 아이디 : jjw981206 , 제출번호 :  68418786
+import java.util.Scanner;
+
+public class Main {
+
+    static int n, k; 
+    static int[] arr;
+    static boolean[] visit; //방문배열
+    static int answer = 0; // 결과값
+
+            static void dfs(int count, int weight) {
+                if(count == n) { // 모든 운동 키트를 다 사용했다면
+                    answer +=1;
+                    return;
+                }
+                for(int i=0; i<n; i++) {
+                    if(!visit[i] && weight >= 500) { // 방문하지 않았으면서 weight가 500이상이면
+                        visit[i] = true; // 방문처리
+                        dfs(count+1, weight + arr[i] - k); // count에 1 더해주고 , weight에 운동키트 중량 증가량과 k를 빼준다.
+                        visit[i] = false; // 모든 경우의 수를 구하기 위해 꼭 적어줘야 한다!!
+                    }
+                }
+            }
+            public static void main(String args[]) {
+                Scanner in = new Scanner(System.in);
+                n=in.nextInt();
+                k=in.nextInt();
+                arr = new int[n];
+                visit = new boolean[n];
+                for(int i=0; i<n; i++) {
+                    arr[i] = in.nextInt();  중량 입력 받기
+                }
+                dfs(0, 500); // count , weight 처음에 넣기
+                System.out.println(answer);
+            }
+}
+*/
