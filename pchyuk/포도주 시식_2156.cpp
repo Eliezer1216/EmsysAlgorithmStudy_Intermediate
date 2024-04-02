@@ -51,6 +51,7 @@ int main(){
 }
 
 // 아래는 틀린 답안
+// 2579번 계단 오르기 문제를 아래 아이디어를 활용하여 풀 수 있음
 #include <iostream>
 using namespace std;
 int max(int a, int b){
