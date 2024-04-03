@@ -1,0 +1,36 @@
+/*
+괄호를 입력받는다.
+(가 입력되면 count를 1씩 늘린다
+)가 입력되면 count를 1씩 줄인다 그리고 ()가 아닌 )는 막대가 끝난 것으로 간주하고 1을 더한다. 
+()가 같이 입력된다면 레이저로 간주하고 count한것을 더한다. 
+*/
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char s[1000];
+	static int length, i, count, sum;
+	scanf("%s",s);
+	length=strlen(s);
+	
+	for(i=0;i<length;i++){
+		if( s[i]=='(' && s[i+1]==')'){
+			sum+=count;
+  			i++;
+		}
+		else if(s[i]=='('){
+			count++;
+		}
+		else if(s[i]==')'){
+			count--;
+			sum++;
+		}
+		else{
+			continue;
+		}
+	}
+	
+	printf("%d",sum);
+	return 0;
+}
