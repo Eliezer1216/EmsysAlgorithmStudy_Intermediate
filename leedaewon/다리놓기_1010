@@ -1,0 +1,47 @@
+/*
+많이 헤맸던 이유
+그냥 공식을 쓴다면 쉽겠지만 숫자가 커지면 오버플로우가 나서 오버플로우 문제를 해결하기 위해서 헤맸음
+ 
+nCr = n-1Cr-1 + n-1Cr-1 이 공식을 구현하고 재귀함수를 이용하여 풀어냄
+ 
+설명
+우선 입력받을 수의 개수testcase를 입력받음.
+재귀함수factorial을 선언함
+예를 들어 입력받은 두 값이 1과 5라고 한다면 n=5, r=1이다.
+만약 n=r이거나 r=0이라면 1을 반환한다.
+factorial(n - 1, r - 1) + factorial(n - 1, r)
+첫항의 경우 r이 0이 되기때문에 1을 반환한다.
+두번째 항의 경우에는 n이 0이 된다. n이 r과 같아질때까지 반복하기 때문에 5번 반복해 5가 나오게 된다 
+*/
+#include <stdio.h>
+
+long long int factorial(int n, int r) {
+    int k=0,block; 
+	
+	if(r>n){
+		block=n;
+		n=r;
+		r=block;
+	}
+		
+    if(n == r || r == 0) 
+        return 1;
+
+    return k = factorial(n - 1, r - 1) + factorial(n - 1, r);			
+
+}
+
+int main() {
+    int N, M;
+    int testcase;
+    int i = 0;
+
+
+    scanf("%d", &testcase);														
+
+    for (i; i < testcase; i++) {
+        scanf("%d %d", &N, &M);
+        printf("%lld\n", factorial(M, N));
+    }
+    return 0;
+}
