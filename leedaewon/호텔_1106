@@ -1,0 +1,43 @@
+/*
+우선 받아야하는 사람C와 N의 값을 받는다.
+나는 효율을 따져보았는데 돈이 들어가는 것에 비해 사람을 많이 끌어올 수 있다면 그것이 효율이 좋다고 판단하게 하였다.
+효율이 가장 좋은 방법으로 C/사람수*돈 을 우선 계산하여 저장하였다.
+그러면 C/사람수 의 나머지가 있을텐데 이것은 방법 하나하나 비교하여 돈이 가장 적게드는 방법을 고르게하여 먼저 저장한 값에 저장하게 하였다.
+*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+	static int c,n,price[1000],person[1000],high,sum,j,i;
+	int cash=999;
+	float hyoyul,hyo=0;
+	
+	scanf("%d %d",&c,&n);
+	
+	for(i=0;i<n;i++){
+		scanf("%d %d",&price[i],&person[i]);
+	} 
+	for(i=0;i<n;i++){
+		hyoyul=person[i]/price[i];
+		if(hyo<hyoyul){
+			hyo=hyoyul;
+			high=i;
+		}
+	}
+	sum=(c/person[high])*price[high];
+	
+	for(i=0;i<n;i++){
+		while(c%person[high] > person[i]*j){
+			j++;
+		}
+		if(cash>price[i]*j){
+			cash=price[i]*j;
+		}
+		j=0;
+	}
+	sum+=cash;
+	
+	printf("%d\n",sum);
+	
+	return 0;
+}
