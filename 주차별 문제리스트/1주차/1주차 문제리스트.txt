@@ -1,6 +1,6 @@
 - 1주차 문제 정리
 
-1. https://www.acmicpc.net/problem/10799 쇠막대기 
+1. <https://www.acmicpc.net/problem/10799> 쇠막대기 
 2. https://www.acmicpc.net/problem/1932 정수 삼각형 
 3. https://www.acmicpc.net/problem/7568 덩치 
 4. https://www.acmicpc.net/problem/2164 카드2 
