@@ -1,0 +1,16 @@
+- 1주차 문제 정리
+
+1. https://www.acmicpc.net/problem/10799 쇠막대기 
+2. https://www.acmicpc.net/problem/1932 정수 삼각형 
+3. https://www.acmicpc.net/problem/7568 덩치 
+4. https://www.acmicpc.net/problem/2164 카드2 
+5. https://www.acmicpc.net/problem/1904 01타일 
+6.  https://www.acmicpc.net/problem/2156 포도주 시식 
+7.  https://www.acmicpc.net/problem/18429 근손실
+8.  https://www.acmicpc.net/problem/4396  지뢰 찾기 
+9.  https://www.acmicpc.net/problem/9507 Generations of Tribbles 
+10. https://www.acmicpc.net/problem/1010 다리 놓기 
+11. https://www.acmicpc.net/problem/1106 호텔 
+12. https://www.acmicpc.net/problem/1260 DFS와BFS
+13. https://www.acmicpc.net/problem/2839 설탕배달 
+14. https://www.acmicpc.net/problem/1912 연속 
