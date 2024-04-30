@@ -1,3 +1,6 @@
+//last two result links are +1 each???
+//runtime error : Out of Bounds
+
 #include<iostream>
 using namespace std;
 
@@ -64,5 +67,3 @@ int main(){
     cout << a;
 
 }
-//last two result links are +1 each???
-//runtime error
