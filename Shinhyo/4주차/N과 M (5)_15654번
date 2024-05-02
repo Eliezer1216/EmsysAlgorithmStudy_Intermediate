@@ -1,0 +1,48 @@
+/* 풀이 - 신효민
+    풀이방법 : 백트래킹을 이용하여 깊이가 뽑아야하는 숫자와 같다면 그때 결과 값에 추가한다.
+    여기서 -> 방문 배열 처리가 중요하다!!
+ */
+import java.util.Arrays;
+import java.util.Scanner;
+
+class Main {
+    static int[] nums; // 숫자를 저장하는 배열
+    static int[] arr; // 뽑은 숫자를 저장하는 배열
+    static boolean[] isVisited; // 방문 배열 -> 중복 방문을 방지하기 위함
+    static int N; // 숫자 갯수
+    static int M; // 뽑아야하는 숫자 갯수
+    static StringBuilder sb = new StringBuilder(); // 답 출력을 위한 것
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt(); // 숫자 갯수
+        M = sc.nextInt(); // 뽑아야하는 숫자 갯수
+        nums = new int[N]; // 숫자를 저장하는 배열 생성
+        arr = new int[N]; // 뽑은 숫자를 저장하는 배열 생성
+        isVisited = new boolean[N]; // 방문 배열 생성
+        for (int i = 0; i < N; i++) { // 숫자 저장
+            nums[i] = sc.nextInt();
+        }
+        Arrays.sort(nums); // 사전순으로 출력하기 위해 오름차순 정렬을 수행한다.
+        dfs(0); // dfs 수행
+        System.out.println(sb.toString());
+    }
+
+    private static void dfs(int count) {
+        if (count == M) { // 뽑아야하는 숫자 갯수랑 같다면
+            for (int i = 0; i < M; i++) {
+                sb.append(arr[i]).append(" "); // 여태까지 뽑은 숫자를 StringBuilder에 저장
+            }
+            sb.append("\n");
+            return;
+        }
+        for (int i = 0; i < N; i++) {
+            if (!isVisited[i]) {  // 방문하지 않았다면
+                isVisited[i] = true; // 방문처리
+                arr[count] = nums[i]; // 뽑아야하는 숫자 배열에 뽑은 숫자를 저장
+                dfs(count + 1); // dfs 함수 호출
+                isVisited[i] = false; // 다시 방문 초기화를 해줘야 한다.
+            }
+        }
+    }
+}
