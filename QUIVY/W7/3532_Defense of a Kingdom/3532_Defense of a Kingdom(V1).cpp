@@ -1,3 +1,5 @@
+//백준 통과 X
+
 #include<iostream>
 using std::cin;
 using std::cout;
