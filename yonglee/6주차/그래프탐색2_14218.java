@@ -66,15 +66,15 @@ public class java14218 {
             ans[en] = Math.min(cnt,ans[en]); // 목표노드 도달시 가장 작은 값으로 추가
             return;
         }
-        if (visited[st]) {
-            if (ans[en] == Integer.MAX_VALUE) {
-                ans[en] = -1;  //
+        if (visited[st]) { //이미 방문했던 노드 방문할시
+            if (ans[en] == Integer.MAX_VALUE) { //목표노드를 방문하지 않았을시
+                ans[en] = -1;  
             }
             return;
         }
-        visited[st] = true;
+        visited[st] = true; //방문체크
         for (int now : A[st]) {
-            if (!visited[now]) {
+            if (!visited[now]) { //dfs
                 DFS(now, en, cnt + 1);
             }
         }
