@@ -34,8 +34,8 @@ using std::endl;
 
 bool vicinity(int x1, int x2, int y1, int y2){
     int a, b;
-    a=((x1>y1)?(x1-y1):(y1-x1)), b=((x2>y2)?(x2-y2):(y2-x2));
-
+    a=abs(x1-y1), b=abs(x2-y2);
+    // a 는 x1, y1 의 차이, b 는 x2, y2 의 차이
     if( a<3 && b<3){
         if( !(a==2 && b==2) )
             return false;
@@ -66,7 +66,7 @@ int cornerCheck(int a1, int a2, int b1, int b2){
 int main(){
     //(1)starting position -> (2)final position -> (3)final move
     int a1, a2, b1, b2, c=0;
-
+    for(; ;){
     //(1)starting position
     cin >> a1 >> a2 >> b1 >> b2;
     
@@ -80,7 +80,8 @@ int main(){
             a1+= (a1-b1>0)?-1:1;
             a2+= (a2-b2>0)?-2:2;
         }
-        cout << a1 << " " << a2 << endl;
+        c++;
+        //cout << a1 << " " << a2 << endl;
     }
 
     //(3)final move
@@ -107,4 +108,5 @@ int main(){
             c+=3;
     }
     cout << c << endl;
+    }
 }
